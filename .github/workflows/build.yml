@@ -34,6 +34,7 @@ jobs:
         working-directory: ${{github.workspace}}
         shell: pwsh
         run: |
+          New-Item -ItemType Directory -Force -Path out/windows/x64
           cp args.gn out\windows\x64\
           cd skiasharp\externals\skia
           python tools\git-sync-deps
